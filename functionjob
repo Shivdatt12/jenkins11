@@ -1,5 +1,5 @@
   def display_build_user(name) {
-    echo "Build username: ${jenkins11}"
+    echo "Build username: ${name}"
     return 0
   }
 
