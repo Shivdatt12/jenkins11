@@ -1,0 +1,26 @@
+pipeline {
+agent any
+
+stages {
+stage('Installation') {
+steps {
+script {
+try {
+def packageName = input(
+message: 'Enter the package name for PostgreSQL:',
+parameters: [string(
+name: 'packageName',
+defaultValue: '',
+description: 'Package name for PostgreSQL'
+)]
+)
+sh "-S sudo apt-get update"
+sh "-S sudo apt-get install -y $packageName"
+} catch (err) {
+println("Error: ${err}")
+}
+}
+}
+}
+}
+}
