@@ -2,13 +2,13 @@ pipeline {
     agent any
     
     environment {
-        var_email = "abc@xyz.com"
+        var_email = "support@jenkinsmaster.com"
    }
         stages {
             stage("print build number and current login username") {  
               steps {
                 echo "Build Number:${BUILD_NUMBER}"
-                sh "whoami"
+                sh "w"
             }
         }
     }
