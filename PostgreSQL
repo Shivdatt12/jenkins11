@@ -14,8 +14,8 @@ defaultValue: '',
 description: 'Package name for PostgreSQL'
 )]
 )
-sh "-S sudo apt-get update"
-sh "-S sudo apt-get install -y $packageName"
+sh "sudo apt-get update"
+sh "sudo apt-get install -y $packageName"
 } catch (err) {
 println("Error: ${err}")
 }
