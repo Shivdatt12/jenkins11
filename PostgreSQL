@@ -4,21 +4,9 @@ agent any
 stages {
 stage('Installation') {
 steps {
+input 'Please provide the package name to install:'
 script {
-try {
-def packageName = input(
-message: 'Enter the package name for PostgreSQL:',
-parameters: [string(
-name: 'packageName',
-defaultValue: '',
-description: 'Package name for PostgreSQL'
-)]
-)
-sh "sudo apt-get update"
-sh "sudo apt-get install -y $packageName"
-} catch (err) {
-println("Error: ${err}")
-}
+sh "sudo apt-get install ${input} -y"
 }
 }
 }
