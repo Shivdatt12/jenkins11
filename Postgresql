@@ -1,5 +1,0 @@
-sudo apt-get update
-sudo apt-get install postgresql -y
-sudo systemctl start postgresql
-sudo systmctl enable postgresql 
-sudo reboot
