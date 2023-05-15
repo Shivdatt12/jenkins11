@@ -9,7 +9,7 @@
   }
   
   pipeline {
-    agent { label 'jenkinsmaster'}
+    agent { label 'masternodes'}
   
     stages {
         stage("Env Build User"){
