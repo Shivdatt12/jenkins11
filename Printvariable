@@ -8,7 +8,7 @@ pipeline {
             stage("print build number and current login username") {  
               steps {
                 echo "Build Number:${BUILD_NUMBER}"
-                sh "echo $USER"
+                sh "W"
             }
         }
     }
