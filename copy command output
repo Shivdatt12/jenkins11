@@ -13,8 +13,18 @@ pipeline {
           def jenkinsFolder = "jenkins/${env.USER}"
           sh "mkdir -p ${jenkinsFolder}"
           sh "cp command.output ${jenkinsFolder}"
+         }
+       }
+     }
+      stage('Print Message') {
+        parallel {
+          stage('Print Job Name') {
+          steps {
+           echo "The ${env.JOB_NAME} run on ${env.NODE_NAME}"
+          }
         }
       }
     }
   }
-}  
+ }
+}
